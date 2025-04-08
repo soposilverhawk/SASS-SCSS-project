@@ -1,0 +1,26 @@
+@mixin flex($direction: row, $justify: space-between, $align: center) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+}
+
+@mixin links() {
+  text-decoration: none;
+  color: $secondary-bg-color;
+}
+
+@mixin gradient($width: 19px, $height: 19px, $deg: 360deg, $shape: triangle) {
+  width: $width;
+  height: $height;
+  background: linear-gradient(
+    $deg,
+    $logo-gradient-orange,
+    $logo-gradient-rose,
+    $logo-gradient-blue
+  );
+
+  @if $shape == "triangle" {
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  }
+}

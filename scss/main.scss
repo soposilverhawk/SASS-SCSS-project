@@ -1,3 +1,66 @@
 @import "./abstracts/variables";
 @import "./abstracts/mixins";
-@import "./base/reset"
+@import "./base/reset";
+@import "./components/container";
+@import "./components/header";
+@import "./components/button";
+
+#container {
+  @include container();
+}
+#container,
+main {
+  margin: 0 auto;
+}
+header,
+#logo-container,
+.header-nav {
+  @include flex();
+}
+header {
+  @include header();
+}
+header nav {
+  width: 30%;
+}
+a {
+  @include links();
+}
+#logo {
+  @include gradient();
+}
+h1,
+.header-nav {
+  text-transform: $text-uppercase;
+}
+.header-nav {
+  &__item {
+    position: relative;
+    padding-bottom: 5px;
+  }
+
+  &__item::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    background-color: $secondary-bg-color;
+    height: 2px;
+    transition: width 0.3s ease-in-out;
+  }
+
+  &__item:hover::after {
+    width: 100%;
+  }
+}
+h1 {
+  font-weight: $text-weight;
+  margin-left: 5px;
+}
+.btn {
+  @include button();
+}
+.header-nav {
+  width: 100%;
+}

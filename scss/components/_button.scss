@@ -1,0 +1,12 @@
+@mixin button() {
+  background-color: $secondary-bg-color;
+  color: $primary-bg-color;
+  padding: 12px 24px;
+  text-transform: $text-uppercase;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $button-hovers;
+  }
+}

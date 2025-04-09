@@ -14,7 +14,10 @@ main {
 }
 header,
 #logo-container,
-.header-nav {
+.header-nav,
+section,
+#invite-container,
+#section-description-container {
   @include flex();
 }
 header {
@@ -30,7 +33,8 @@ a {
   @include gradient();
 }
 h1,
-.header-nav {
+.header-nav,
+h2 {
   text-transform: $text-uppercase;
 }
 .header-nav {
@@ -61,6 +65,71 @@ h1 {
 .btn {
   @include button();
 }
-.header-nav {
+.header-nav,
+section,
+#section-description-container {
   width: 100%;
+}
+main {
+  height: 650px;
+}
+section,
+#section-description-container,
+#section-cover-container {
+  height: 100%;
+}
+#section-description-container {
+  background-color: $secondary-bg-color;
+  position: relative;
+}
+h2 {
+  font-size: $text-lg;
+}
+p {
+  font-size: $text-md;
+  color: $tertiary-text-color;
+}
+#section-description {
+  color: $primary-bg-color;
+  height: 50%;
+  padding: 0 112px;
+  @include flex(
+    $direction: column,
+    $justify: space-between,
+    $align: flex-start
+  );
+}
+#section-description::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 6px;
+  @include gradient(
+    $width: 6px,
+    $height: 304px,
+    $deg: 360deg,
+    $shape: "rectangle"
+  );
+}
+#invite-container {
+  width: 150px;
+  padding-bottom: 10px;
+  position: relative;
+  cursor: pointer;
+}
+#invite-container::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  background-color: $primary-bg-color;
+  height: 2px;
+  transition: width 0.3s ease-in-out;
+}
+#invite-container:hover::after {
+  width: 100%;
+}
+#invite-btn {
+  padding: 0;
 }

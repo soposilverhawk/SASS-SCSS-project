@@ -145,7 +145,10 @@ main {
 
 header,
 #logo-container,
-.header-nav {
+.header-nav,
+section,
+#invite-container,
+#section-description-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -177,7 +180,8 @@ a {
 }
 
 h1,
-.header-nav {
+.header-nav,
+h2 {
   text-transform: uppercase;
 }
 
@@ -216,6 +220,78 @@ h1 {
   background-color: rgba(0, 0, 0, 0.8352941176);
 }
 
-.header-nav {
+.header-nav,
+section,
+#section-description-container {
   width: 100%;
+}
+
+main {
+  height: 650px;
+}
+
+section,
+#section-description-container,
+#section-cover-container {
+  height: 100%;
+}
+
+#section-description-container {
+  background-color: #000;
+  position: relative;
+}
+
+h2 {
+  font-size: 40px;
+}
+
+p {
+  font-size: 15px;
+  color: rgba(184, 178, 178, 0.8);
+}
+
+#section-description {
+  color: #fff;
+  height: 50%;
+  padding: 0 112px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+#section-description::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 6px;
+  width: 6px;
+  height: 304px;
+  background: linear-gradient(360deg, #ffc593, #bc7198, #5a77ff);
+}
+
+#invite-container {
+  width: 150px;
+  padding-bottom: 10px;
+  position: relative;
+  cursor: pointer;
+}
+
+#invite-container::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  background-color: #fff;
+  height: 2px;
+  transition: width 0.3s ease-in-out;
+}
+
+#invite-container:hover::after {
+  width: 100%;
+}
+
+#invite-btn {
+  padding: 0;
 }/*# sourceMappingURL=main.css.map */
